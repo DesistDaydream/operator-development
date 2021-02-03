@@ -1,0 +1,7 @@
+domain: desistdaydream.ltd
+repo: helloWorld
+resources:
+- group: test
+  kind: HelloWorld
+  version: v1
+version: "2"

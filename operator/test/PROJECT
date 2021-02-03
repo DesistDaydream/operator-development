@@ -1,0 +1,7 @@
+domain: desistdaydream.ltd
+repo: github.com/DesistDaydream/KubernetesAPI/operator/test
+resources:
+- group: test
+  kind: Test
+  version: v1
+version: "2"

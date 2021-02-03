@@ -1,0 +1,24 @@
+# permissions for end users to edit etcdoperators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: etcdoperator-editor-role
+rules:
+- apiGroups:
+  - test.desistdaydream.ltd
+  resources:
+  - etcdoperators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - test.desistdaydream.ltd
+  resources:
+  - etcdoperators/status
+  verbs:
+  - get

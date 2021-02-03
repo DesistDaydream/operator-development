@@ -1,0 +1,59 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: helloworldren.test.desistdaydream.ltd
+spec:
+  group: test.desistdaydream.ltd
+  names:
+    kind: HelloWorld
+    listKind: HelloWorldList
+    plural: helloworldren
+    singular: helloworld
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: HelloWorld 是 helloworld API 的架构 就是要想创建 HelloWorld 对象的话，该对象的 yaml
+        中必须包含的字段，一般都有 apiVersion、kind、metadata、spec、status 这5个。 metav1.TypeMeta 包含
+        kind 和 apiVersion 这两个字段下应该定义的内容；metav1.ObjectMeta 包含 metadata 字段下应该定义的内容。
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: HelloWorldSpec 定义 HelloWorld 资源的期望状态 也就是 HelloWorld 资源 .spec
+            字段下的字段，比如 pod 资源有 .spec.containers、.spec.volumes 等等字段
+          properties:
+            foo:
+              description: Foo 是 HelloWorld 资源的 .spec.foo 字段
+              type: string
+          type: object
+        status:
+          description: HelloWorldStatus 定义 HelloWorld 对象的观察状态 也就是 HelloWorld 资源 .status
+            字段下的字段，主要就是查看当前对象的状态信息。
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

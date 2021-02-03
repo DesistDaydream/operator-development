@@ -1,0 +1,7 @@
+apiVersion: test.desistdaydream.ltd/v1alpha1
+kind: EtcdOperator
+metadata:
+  name: etcdoperator-sample
+spec:
+  size: 3
+  image: cnych/etcd:v3.4.13
